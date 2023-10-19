@@ -1,0 +1,59 @@
+name: Cross-Compile Go Project
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**.go'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        goos: [linux, darwin, windows, freebsd, openbsd, android]
+        goarch: [amd64, 386, arm64, arm]
+        exclude:
+          - goos: windows
+            goarch: arm64
+          - goos: windows
+            goarch: arm
+        include:
+          - goos: windows
+            extension: .exe
+          - goos: linux
+            extension: ''
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: '1.21'
+
+      - name: Create Build Directory
+        run: mkdir -p build
+
+      - name: Compile Go code
+        run: GOOS=${{ matrix.goos }} GOARCH=${{ matrix.goarch }} go build -o build/termstopwatch-${{ matrix.goos }}-${{ matrix.goarch }}${{ matrix.extension }}
+
+      - name: Create GitHub Release
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+        id: create_release
+        uses: actions/create-release@v1
+        with:
+          tag_name: ${{ github.sha }}
+          release_name: Release ${{ github.sha }}
+          draft: false
+          prerelease: false
+
+      - name: Upload binaries to release
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+        uses: actions/upload-release-asset@v1
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }} # This should reference create_release step
+          asset_path: ./build/termstopwatch-${{ matrix.goos }}-${{ matrix.goarch }}${{ matrix.extension }}
+          asset_name: termstopwatch-${{ matrix.goos }}-${{ matrix.goarch }}${{ matrix.extension }}
+          asset_content_type: application/octet-stream
