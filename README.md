@@ -77,7 +77,7 @@ When `termstopwatch` is running, you can use these carefully selected keys to ch
 * **(H)** - Hide help text
 * **(ESC)** or **Ctrl-c** - Exit :(
 
-You can also run it with these command line flags, if you're an _advanced_ user:
+You can also run it with these command line flags,  which you probably will, since you're an _advanced_ user:
 ```console
 Usage of ./termstopwatch:
   -d, --debug         Show debug text.
