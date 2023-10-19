@@ -19,6 +19,10 @@ jobs:
             goarch: arm64
           - goos: windows
             goarch: arm
+          - goos: darwin
+            goarch: 386
+          - goos: darwin
+            goarch: arm
         include:
           - goos: windows
             extension: .exe
