@@ -10,6 +10,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     strategy:
       matrix:
         goos: [linux, darwin, windows, freebsd, openbsd, android]
@@ -52,6 +54,7 @@ jobs:
           release_name: Release ${{ github.sha }}
           draft: false
           prerelease: false
+          token: ${{ env.GITHUB_TOKEN }}
 
       - name: Upload binaries to release
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
