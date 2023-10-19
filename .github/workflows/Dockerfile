@@ -2,6 +2,9 @@
 ARG GO_VERSION=1.21
 ARG NDK_VERSION=r26b
 
+# DEBUG
+RUN echo "NDK_VERSION=${NDK_VERSION}, GO_VERSION=${GO_VERSION}"
+
 # Use an official Go runtime as a parent image
 FROM golang:${GO_VERSION} as builder
 
