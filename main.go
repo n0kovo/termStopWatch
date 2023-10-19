@@ -14,7 +14,7 @@ import (
 )
 
 const (
-	AppVersion               = 0.0.1
+	AppVersion               = "0.0.1"
 	ZeroTimeStrWithMillis    = "00:00:00.000"
 	ZeroTimeStrWithoutMillis = "00:00:00"
 	TickerInterval           = 10 * time.Millisecond
