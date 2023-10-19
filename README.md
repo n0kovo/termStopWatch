@@ -45,12 +45,9 @@ _"Why settle for an average, humdrum, run-of-the-mill stopwatch when you can daz
 * **Keyboard Shortcuts**
   * With hotkeys so intuitive, you'd think they were telepathic. Pause, reset, toggle milliseconds like you're typing Shakespeare.<br /><br />
 * **Help Text**
-  * For the unlikely event that a modern-day Einstein like yourself needs it. Toggle on and off for those "just in case I forget I'm a genius" moments.<br /><br />
+  * For the unlikely event that a modern-day Einstein like yourself needs it. Toggle on and off for those "just in case I forget I'm a genius" moments.<br />
   
-_Welcome to the future, where even your stopwatch is cooler than you._
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
+_Welcome to the future, where even your stopwatch is cooler than you._<br />
 
 
 <!-- GETTING STARTED -->
