@@ -15,7 +15,7 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     strategy:
       matrix:
-        goos: [linux, darwin, windows, freebsd, openbsd, android]
+        goos: [linux, darwin, windows, freebsd, openbsd]
         goarch: [amd64, 386, arm64, arm]
         exclude:
           - goos: windows
@@ -35,13 +35,21 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Create Build Directory
+        run: mkdir -p build
+
+      - name: Build Docker image
+        run: docker build . --file ./.github/workflows/Dockerfile --tag android-builder
+
+      - name: Compile Go code inside Docker container
+        run: >
+          docker run android-builder /bin/bash -c "
+          CGO_ENABLED=1 GOOS=android GOARCH=arm go build -o build/termstopwatch-android-arm"
+
       - name: Set up Go
         uses: actions/setup-go@v2
         with:
           go-version: '1.21'
-
-      - name: Create Build Directory
-        run: mkdir -p build
 
       - name: Compile Go code
         run: GOOS=${{ matrix.goos }} GOARCH=${{ matrix.goarch }} go build -o build/termstopwatch-${{ matrix.goos }}-${{ matrix.goarch }}${{ matrix.extension }}
