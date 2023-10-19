@@ -14,6 +14,7 @@ import (
 )
 
 const (
+	AppVersion               = 0.1
 	ZeroTimeStrWithMillis    = "00:00:00.000"
 	ZeroTimeStrWithoutMillis = "00:00:00"
 	TickerInterval           = 10 * time.Millisecond
@@ -236,7 +237,7 @@ func main() {
 			startY := height/2 - len(lines)/2
 
 			if showHelp {
-				debugString := fmt.Sprintf("startY: %d, currentZeroWidth: %d, len(lines): %d, fixedStartX: %d", startY, currentZeroWidth, len(lines), fixedStartX)
+				debugString := fmt.Sprintf("startY: %d, currentZeroWidth: %d, len(lines): %d, fixedStartX: %d, version: %s", startY, currentZeroWidth, len(lines), fixedStartX, AppVersion)
 				drawHelpText(screen, helpText, options.FontName, debugString, showDebug)
 			}
 			drawAscii(screen, asciiTime, fixedStartX, startY)
