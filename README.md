@@ -106,7 +106,7 @@ Don't forget to give the project a star!
 <!-- LICENSE -->
 ## License
 
-Distributed under the GNU GPL 3 License. See `LICENSE.txt` for more information.
+Distributed under the GNU GPL 3 License. See `LICENSE` for more information.
 
 <!-- CONTACT -->
 ## Contact
@@ -138,4 +138,4 @@ Project Link: [https://github.com/n0kovo/termstopwatch](https://github.com/n0kov
 [issues-shield]: https://img.shields.io/github/issues/n0kovo/termstopwatch.svg?style=for-the-badge
 [issues-url]: https://github.com/n0kovo/termstopwatch/issues
 [license-shield]: https://img.shields.io/github/license/n0kovo/termstopwatch.svg?style=for-the-badge
-[license-url]: https://github.com/n0kovo/termstopwatch/blob/master/LICENSE.txt
+[license-url]: https://github.com/n0kovo/termstopwatch/blob/master/LICENSE
