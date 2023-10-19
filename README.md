@@ -66,8 +66,6 @@ When you have `go`, you can install `termstopwatch` like so:
 go install https://github.com/n0kovo/termstopwatch@latest
 ```
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 <!-- USAGE EXAMPLES -->
 ## Usage
@@ -89,8 +87,6 @@ Usage of ./termstopwatch:
   -p, --pause         Start paused.
 ```
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -106,16 +102,11 @@ Don't forget to give the project a star!
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 <!-- LICENSE -->
 ## License
 
 Distributed under the GNU GPL 3 License. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 <!-- CONTACT -->
 ## Contact
@@ -123,8 +114,6 @@ Distributed under the GNU GPL 3 License. See `LICENSE.txt` for more information.
 n0kovo - [Mastodon](https://infosec.exchange/@n0kovo)
 
 Project Link: [https://github.com/n0kovo/termstopwatch](https://github.com/n0kovo/termstopwatch)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 <!-- ACKNOWLEDGMENTS -->
