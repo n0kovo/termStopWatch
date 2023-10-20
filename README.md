@@ -36,7 +36,7 @@ _"Why settle for an average, humdrum, run-of-the-mill stopwatch when you can daz
 
 `termstopwatch` is not just a stopwatch; it's an experience. Written in Go, this terminal app manifests the future of time-keeping through the cutting-edge technology of ASCII art. Yes, we went there.
 
-### Features So Magical, They'll Turn You Into a Newt:
+### Features so magical, they'll turn you into a newt:
 
 * **Stopwatch Reimagined**
   * Behold the sheer elegance of elapsed time ticking away — in beautifully hand-crafted ASCII art.<br /><br />
