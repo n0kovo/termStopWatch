@@ -9,6 +9,8 @@ on:
       - main
     tags:
       - "*"
+    paths:
+      - '**.go'
   workflow_dispatch:
 
 permissions:

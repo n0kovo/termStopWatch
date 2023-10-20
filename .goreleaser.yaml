@@ -298,7 +298,7 @@ archives:
       - "README.md"
       - "fonts/*" 
     name_template: >-
-      {{ .ProjectName }}-
+      {{ .ProjectName }}
       {{ .Tag }}_
       {{- title .Os }}_
       {{- if eq .Arch "amd64" }}x86_64
