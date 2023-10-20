@@ -1,0 +1,316 @@
+before:
+  env:
+    - NDKVERSION={{ .Env.NDKVERSION }}
+    - NDKBINS=/android-ndk-{{ .Env.NDKVERSION }}/toolchains/llvm/prebuilt/linux-x86_64/bin
+  hooks:
+    - sh -c "test -f android-ndk-${NDKVERSION}-linux.zip || curl -O https://dl.google.com/android/repository/android-ndk-${NDKVERSION}-linux.zip"
+    - sh -c "unzip android-ndk-${NDKVERSION}-linux.zip -d / && rm -f android-ndk-${NDKVERSION}-linux.zip"
+    - go mod tidy
+
+builds:
+  - id: 'aix-ppc64'
+    goos:
+      - aix
+    goarch:
+      - ppc64
+
+  - id: 'android-arm64'
+    goos:
+      - android
+    goarch:
+      - arm64
+
+  - id: 'darwin-amd64'
+    goos:
+      - darwin
+    goarch:
+      - amd64
+
+  - id: 'darwin-arm64'
+    goos:
+      - darwin
+    goarch:
+      - arm64
+
+  - id: 'dragonfly-amd64'
+    goos:
+      - dragonfly
+    goarch:
+      - amd64
+
+  - id: 'freebsd-386'
+    goos:
+      - freebsd
+    goarch:
+      - 386
+
+  - id: 'freebsd-amd64'
+    goos:
+      - freebsd
+    goarch:
+      - amd64
+
+  - id: 'freebsd-arm'
+    goos:
+      - freebsd
+    goarch:
+      - arm
+
+  - id: 'freebsd-arm64'
+    goos:
+      - freebsd
+    goarch:
+      - arm64
+
+  - id: 'illumos-amd64'
+    goos:
+      - illumos
+    goarch:
+      - amd64
+
+  - id: 'ios-amd64'
+    goos:
+      - ios
+    goarch:
+      - amd64
+
+  - id: 'js-wasm'
+    goos:
+      - js
+    goarch:
+      - wasm
+
+  - id: 'linux-386'
+    goos:
+      - linux
+    goarch:
+      - 386
+
+  - id: 'linux-amd64'
+    goos:
+      - linux
+    goarch:
+      - amd64
+
+  - id: 'linux-arm'
+    goos:
+      - linux
+    goarch:
+      - arm
+
+  - id: 'linux-arm64'
+    goos:
+      - linux
+    goarch:
+      - arm64
+
+  - id: 'linux-mips'
+    goos:
+      - linux
+    goarch:
+      - mips
+
+  - id: 'linux-mips64'
+    goos:
+      - linux
+    goarch:
+      - mips64
+
+  - id: 'linux-mips64le'
+    goos:
+      - linux
+    goarch:
+      - mips64le
+
+  - id: 'linux-mipsle'
+    goos:
+      - linux
+    goarch:
+      - mipsle
+
+  - id: 'linux-ppc64'
+    goos:
+      - linux
+    goarch:
+      - ppc64
+
+  - id: 'linux-ppc64le'
+    goos:
+      - linux
+    goarch:
+      - ppc64le
+
+  - id: 'linux-riscv64'
+    goos:
+      - linux
+    goarch:
+      - riscv64
+
+  - id: 'linux-s390x'
+    goos:
+      - linux
+    goarch:
+      - s390x
+
+  - id: 'netbsd-386'
+    goos:
+      - netbsd
+    goarch:
+      - 386
+
+  - id: 'netbsd-amd64'
+    goos:
+      - netbsd
+    goarch:
+      - amd64
+
+  - id: 'netbsd-arm'
+    goos:
+      - netbsd
+    goarch:
+      - arm
+
+  - id: 'netbsd-arm64'
+    goos:
+      - netbsd
+    goarch:
+      - arm64
+
+  - id: 'openbsd-386'
+    goos:
+      - openbsd
+    goarch:
+      - 386
+
+  - id: 'openbsd-amd64'
+    goos:
+      - openbsd
+    goarch:
+      - amd64
+
+  - id: 'openbsd-arm'
+    goos:
+      - openbsd
+    goarch:
+      - arm
+
+  - id: 'openbsd-arm64'
+    goos:
+      - openbsd
+    goarch:
+      - arm64
+
+  - id: 'openbsd-mips64'
+    goos:
+      - openbsd
+    goarch:
+      - mips64
+
+  - id: 'plan9-386'
+    goos:
+      - plan9
+    goarch:
+      - 386
+
+  - id: 'plan9-amd64'
+    goos:
+      - plan9
+    goarch:
+      - amd64
+
+  - id: 'plan9-arm'
+    goos:
+      - plan9
+    goarch:
+      - arm
+
+  - id: 'solaris-amd64'
+    goos:
+      - solaris
+    goarch:
+      - amd64
+
+  - id: 'windows-386'
+    goos:
+      - windows
+    goarch:
+      - 386
+
+  - id: 'windows-amd64'
+    goos:
+      - windows
+    goarch:
+      - amd64
+
+  - id: 'windows-arm'
+    goos:
+      - windows
+    goarch:
+      - arm
+
+  - id: 'windows-arm64'
+    goos:
+      - windows
+    goarch:
+      - arm64
+
+# ------------ ANDROID --------------
+
+  - id: 'android_armv7'
+    env:
+      - CGO_ENABLED=1
+      - CC={{ .Env.NDKBINS }}/armv7a-linux-androideabi34-clang
+    goos:
+      - android
+    goarch:
+      - arm
+    goarm:
+      - 7
+      - 6
+      - 5
+
+
+  - id: 'android_x86'
+    env:
+      - CGO_ENABLED=1
+      - CC={{ .Env.NDKBINS }}/i686-linux-android34-clang
+    goos:
+      - android
+    goarch:
+      - 386
+
+
+  - id: 'android_x86_64'
+    env:
+      - CGO_ENABLED=1
+      - CC={{ .Env.NDKBINS }}/x86_64-linux-android34-clang
+    goos:
+      - android
+    goarch:
+      - amd64
+
+
+archives:
+  - format: tar.gz
+    files:
+      - "LICENSE"
+      - "README.md"
+      - "fonts/*" 
+    name_template: >-
+      {{ .ProjectName }}_
+      {{- title .Os }}_
+      {{- if eq .Arch "amd64" }}x86_64
+      {{- else if eq .Arch "386" }}i386
+      {{- else }}{{ .Arch }}{{ end }}
+      {{- if and (eq .Os "android") (eq .Arch "arm") }}v{{ .Arm }}{{ end }}
+      {{- if and (ne .Os "android") .Arm }}v{{ .Arm }}{{ end }}
+    format_overrides:
+      - goos: windows
+        format: zip
+
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - "^docs:"
+      - "^test:"
