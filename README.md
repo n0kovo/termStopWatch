@@ -55,12 +55,20 @@ _Welcome to the future, where even your stopwatch is cooler than you._<br />
 
 It almost couldn't be easier, my friend.
 
-### Prerequisites
+### Precompiled binaries
+
+Download one of the binary packages from [Releases](https://github.com/n0kovo/termstopwatch/releases)
+
+**Supported platforms:** Linux, macOS, Windows, Android, FreeBSD, OpenBSD, NetBSD, Plan9, AIX, Dragonfly, Solaris, Illumos, JS WASM 
+
+### Build from source
+
+#### Prerequisites
 
 You'll ned `go` to compile `termstopwatch`, so
 * Install [Go](https://go.dev/doc/install)
 
-### Installation
+#### Installation
 When you have `go`, you can install `termstopwatch` like so:
 ```console
 go install https://github.com/n0kovo/termstopwatch@latest
