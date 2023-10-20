@@ -73,6 +73,12 @@ When you have `go`, you can install `termstopwatch` like so:
 go install https://github.com/n0kovo/termstopwatch@latest
 ```
 
+Or you can just clone the repo:
+```console
+git clone https://github.com/n0kovo/termstopwatch
+cd termstopwatch
+go build .
+```
 
 <!-- USAGE EXAMPLES -->
 ## Usage
