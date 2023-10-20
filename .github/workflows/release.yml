@@ -1,7 +1,7 @@
 name: Cross-Compile and release
 
 env:
-  - NDKVERSION: r26b
+  NDKVERSION: r26b
 
 on:
   push:
