@@ -36,7 +36,7 @@ _"Why settle for an average, humdrum, run-of-the-mill stopwatch when you can daz
 
 `termstopwatch` is not just a stopwatch; it's an experience. Written in Go, this terminal app manifests the future of time-keeping through the cutting-edge technology of ASCII art. Yes, we went there.
 
-### Features So Magical, They'll Turn You Into a Newt:
+### Features so magical, they'll turn you into a newt:
 
 * **Stopwatch Reimagined**
   * Behold the sheer elegance of elapsed time ticking away — in beautifully hand-crafted ASCII art.<br /><br />
@@ -46,8 +46,6 @@ _"Why settle for an average, humdrum, run-of-the-mill stopwatch when you can daz
   * With hotkeys so intuitive, you'd think they were telepathic. Pause, reset, toggle milliseconds like you're typing Shakespeare.<br /><br />
 * **Help Text**
   * For the unlikely event that a modern-day Einstein like yourself needs it. Toggle on and off for those "just in case I forget I'm a genius" moments.<br />
-  
-_Welcome to the future, where even your stopwatch is cooler than you._<br />
 
 
 <!-- GETTING STARTED -->
@@ -55,12 +53,21 @@ _Welcome to the future, where even your stopwatch is cooler than you._<br />
 
 It almost couldn't be easier, my friend.
 
-### Prerequisites
+### Precompiled binaries
+
+Download one of the binary packages from [Releases](https://github.com/n0kovo/termstopwatch/releases)
+
+_(Supported platforms: Linux, macOS, Windows, Android, FreeBSD, OpenBSD, NetBSD, Plan9, AIX, Dragonfly, Solaris, Illumos, JS WASM)_
+
+### Build from source
+So you wanna hack at it, you little hacker you? Do it!
+
+#### Prerequisites
 
 You'll ned `go` to compile `termstopwatch`, so
 * Install [Go](https://go.dev/doc/install)
 
-### Installation
+#### Installation
 When you have `go`, you can install `termstopwatch` like so:
 ```console
 go install https://github.com/n0kovo/termstopwatch@latest
