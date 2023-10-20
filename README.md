@@ -60,6 +60,7 @@ Download one of the binary packages from [Releases](https://github.com/n0kovo/te
 _(Supported platforms: Linux, macOS, Windows, Android, FreeBSD, OpenBSD, NetBSD, Plan9, AIX, Dragonfly, Solaris, Illumos, JS WASM)_
 
 ### Build from source
+So you wanna hack at it, you little hacker you? Do it!
 
 #### Prerequisites
 
