@@ -57,7 +57,7 @@ It almost couldn't be easier, my friend.
 
 Download one of the binary packages from [Releases](https://github.com/n0kovo/termstopwatch/releases)
 
-**Supported platforms:** Linux, macOS, Windows, Android, FreeBSD, OpenBSD, NetBSD, Plan9, AIX, Dragonfly, Solaris, Illumos, JS WASM 
+_(Supported platforms: Linux, macOS, Windows, Android, FreeBSD, OpenBSD, NetBSD, Plan9, AIX, Dragonfly, Solaris, Illumos, JS WASM)_
 
 ### Build from source
 
